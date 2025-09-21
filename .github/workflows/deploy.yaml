@@ -24,7 +24,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Install, build, and upload
-        uses: withastro/action@v1 # This handles Node setup, dependencies, and build
+        uses: withastro/action@v4
         with:
           path: .
           node-version: 20
