@@ -17,6 +17,69 @@ section {
   display: block;
 }
 
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 48px;
+  z-index: 100;
+}
+
+.theme-switch {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(28, 28, 28, 0.8);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.theme-switch:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.theme-switch svg {
+  width: 20px;
+  height: 20px;
+  stroke: white;
+  fill: none;
+  stroke-width: 2;
+}
+
+.moon-icon {
+  display: none;
+}
+
+[data-theme="light"] .sun-icon {
+  display: none;
+}
+
+[data-theme="light"] .moon-icon {
+  display: block;
+}
+
+[data-theme="light"] body {
+  background-color: #ffffff;
+  color: #333;
+}
+
+[data-theme="light"] .sidebar {
+  background-color: #f5f5f5;
+  border-right-color: #e0e0e0;
+}
+
+[data-theme="light"] h1,
+[data-theme="light"] h3,
+[data-theme="light"] h4,
+[data-theme="light"] .label-white {
+  color: #333;
+}
+
+
+
 a {
   background-color: rgba(0, 0, 0, 0);
 }
@@ -214,6 +277,37 @@ ul {
   outline: 0;
 }
 
+.contact-buttons {
+  display: flex;
+  gap: 8px;
+  margin: 0px 0;
+  justify-content: center;
+}
+
+.contact-btn {
+  width: 30px;
+  height: 30px;
+  /* background: rgba(255, 255, 255, 0.1); */
+  /* border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  /* transition: background 0.2s; */
+}
+
+.contact-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.contact-btn svg {
+  width: 14px;
+  height: 14px;
+  fill: white;
+}
+
+
 @media screen and (max-width: 991px) {
   .w-nav[data-collapse='medium'] .w-nav-menu {
     display: none;
@@ -261,9 +355,9 @@ h1 {
   letter-spacing: -0.5px;
   margin-top: 0;
   margin-bottom: 18px;
-  font-size: 58px;
+  font-size: 42px;
   font-weight: 300;
-  line-height: 72px;
+  line-height: 52px;
 }
 
 h3 {
@@ -576,6 +670,10 @@ p {
 }
 
 @media screen and (max-width: 991px) {
+  h1 {
+    font-size: 36px;
+    line-height: 44px;
+  }
   .content {
     flex-direction: column;
   }
@@ -627,8 +725,9 @@ p {
 
 @media screen and (max-width: 767px) {
   h1 {
-    font-size: 54px;
-    line-height: 64px;
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: -0.3px;
   }
 
   h4 {

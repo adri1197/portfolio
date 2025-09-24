@@ -19,3 +19,16 @@ export function setupNav() {
   navButton.addEventListener('click', toggleNav);
   return () => navButton.removeEventListener('click', toggleNav);
 }
+
+export function switchTheme() {
+  const themeSwitch = document.getElementById('theme-switch');
+  const currentTheme = localStorage.getItem('theme') || 'dark';
+  
+  document.documentElement.setAttribute('data-theme', currentTheme);
+  
+  themeSwitch.addEventListener('click', () => {
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  });
+}
