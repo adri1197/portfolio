@@ -18,47 +18,69 @@ section {
 }
 
 .theme-toggle {
-  position: absolute;
-  top: 20px;
-  right: 48px;
-  z-index: 100;
+    position: fixed;
+    top: 20px;
+    right: 48px;
+    z-index: 1000;
 }
 
 .theme-switch {
-  width: 40px;
-  height: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  background: rgba(28, 28, 28, 0.8);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 8px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
 }
 
 .theme-switch:hover {
-  background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .theme-switch svg {
-  width: 20px;
-  height: 20px;
-  stroke: white;
-  fill: none;
-  stroke-width: 2;
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    stroke-width: 2;
+    fill: none;
+    color: white;
+}
+
+.sun-icon {
+    display: block;
 }
 
 .moon-icon {
-  display: none;
+    display: none;
 }
 
 [data-theme="light"] .sun-icon {
-  display: none;
+    display: none;
 }
 
 [data-theme="light"] .moon-icon {
-  display: block;
+    display: block;
+}
+
+[data-theme="light"] .theme-switch {
+    background: rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="light"] .theme-switch svg {
+    color: #333;
+}
+
+@media screen and (max-width: 991px) {
+    .theme-toggle {
+        top: 12px;
+        right: 24px;
+    }
 }
 
 [data-theme="light"] body {
@@ -294,7 +316,6 @@ ul {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  /* transition: background 0.2s; */
 }
 
 .contact-btn:hover {
@@ -568,11 +589,25 @@ p {
 }
 
 .projects-container {
+  transition: background-color 0.3s ease;
+  border-radius: 8px;
   grid-column-gap: 24px;
   grid-row-gap: 24px;
   align-items: stretch;
   text-decoration: none;
   display: flex;
+}
+
+.projects-container:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme='dark'] .projects-container:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme='light'] .projects-container:hover {
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .single-projects-category {
